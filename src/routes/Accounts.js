@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 
-const CreateService = require('../services/Create')
-const RetrieveService = require('../services/Retrieve')
-const UpdateService = require('../services/Update')
-const DeleteService = require('../services/Delete')
+const CreateService = require('../../services/Create')
+const RetrieveService = require('../../services/Retrieve')
+const UpdateService = require('../../services/Update')
+const DeleteService = require('../../services/Delete')
 
 router.post(`/create`, async (req, res) => {
   const { username, password } = req.body

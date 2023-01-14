@@ -9,7 +9,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 /* Routes */
-const accountsRoute = require('../routes/Accounts')
+const accountsRoute = require('./routes/Accounts')
 
 app.use('/accounts', accountsRoute)
 

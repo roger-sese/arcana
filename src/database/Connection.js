@@ -1,16 +1,19 @@
+const { query } = require('express')
 const mysql = require('mysql')
 
 const dbConfig = {
-  host: "localhost",
+  host: "127.0.0.1",
   user: "root",
-  password: "",
+  password: "Rogermarksese23",
   port: 3306,
-  database: "nodejs-mysql"
+  database: "practice"
 }
 
-const db = mysql.createPool(dbConfig)
 
-module.exports = (query) => {
+const Connection = (query) =>  
+{
+  const db = mysql.createPool(dbConfig);
+  
   return new Promise((resolve, reject) => {
     db.getConnection((err, sql) => {
       if (err) {
@@ -30,4 +33,9 @@ module.exports = (query) => {
       }
     })
   })
+}
+
+
+module.exports = {
+  Connection
 }
