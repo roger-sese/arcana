@@ -1,12 +1,19 @@
-const Connection = require("../src/database/Connection")
+const {Connection} = require("../src/database/Connection")
 
 module.exports = async (fields) => {
   try {
-    const query = `SELECT ` +
+    let query = null;
+    if (fields){
+      query = `SELECT ` +
                     `${fields} ` +
                   `FROM ` +
                     `accounts`
-
+    }else {
+      query = `SELECT ` +
+                     `*` +
+                  `FROM ` +
+                    `accounts`
+    } 
     const results = await Connection(query)
 
     return results
