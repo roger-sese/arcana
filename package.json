@@ -1,0 +1,22 @@
+{
+  "name": "arcana",
+  "version": "1.0.0",
+  "description": "<b>WEB API DEVELOPMENT in Practice-git branch</b>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roger-sese/arcana.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roger-sese/arcana/issues"
+  },
+  "homepage": "https://github.com/roger-sese/arcana#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
