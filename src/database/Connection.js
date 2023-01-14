@@ -1,4 +1,3 @@
-const { query } = require('express')
 const mysql = require('mysql')
 
 const dbConfig = {
@@ -13,7 +12,7 @@ const dbConfig = {
 const Connection = (query) =>  
 {
   const db = mysql.createPool(dbConfig);
-  
+
   return new Promise((resolve, reject) => {
     db.getConnection((err, sql) => {
       if (err) {

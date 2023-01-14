@@ -1,11 +1,11 @@
-const Connection = require("../src/database/Connection")
+const {Connection} = require("../src/database/Connection")
 
 module.exports = async (username, password) => {
   try {
     const query = `INSERT INTO ` +
                     `accounts ` +
                   `VALUES ` +
-                    `(null, '${username}', '${password}')`
+                    `('${username}', '${password}')`
 
     await Connection(query)
 

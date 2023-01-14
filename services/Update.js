@@ -1,4 +1,4 @@
-const Connection = require("../src/database/Connection")
+const {Connection} = require("../src/database/Connection")
 
 module.exports = async (id, username, password) => {
   try {

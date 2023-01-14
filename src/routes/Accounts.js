@@ -48,9 +48,9 @@ router.get(`/retrieve`, async (req, res) => {
 })
 
 router.post(`/update`, async (req, res) => {
-  const { id, newUsername, newPassword } = req.body
-
-  const results = await UpdateService(id, newUsername, newPassword)
+  const { id, username, password } = req.body
+  
+  const results = await UpdateService(id, username, password)
 
   if (results) {
     res
@@ -69,7 +69,7 @@ router.post(`/update`, async (req, res) => {
   }
 })
 
-router.get(`/delete`, async (req, res) => {
+router.post(`/delete`, async (req, res) => {
   const { id } = req.query
 
   const results = await DeleteService(id)
