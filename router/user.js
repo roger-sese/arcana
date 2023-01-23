@@ -1,5 +1,6 @@
 const user_router = require('express').Router();
-const User = require('../crew/User')
+const { saveUserDetails } = require('../controller/user');
+const User = require('../crew/User');
 
 user_router.route('/')
     .get(async (req, res) => {
@@ -8,9 +9,14 @@ user_router.route('/')
     })
     .post(async (req, res) => {
         const { first_name, last_name } = req.body;
-        const result = await User.insertUser({ first_name, last_name });
-        res.send({ message: `Successfully created` });
-    })
+        const { result, error } = await saveUserDetails({ first_name, last_name });
+
+        if (error) {
+            res.status(error.statusCode).send(error.body);
+        } else {
+            res.send(JSON.parse(result.body));
+        }
+    });
 
 
 
