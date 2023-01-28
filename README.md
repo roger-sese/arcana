@@ -19,4 +19,9 @@
     <td>TBA</td>
     <td>TBA</td>
   </tr>
+  <tr>
+    <td>Use ORM to optimize SQL [ Prisma ? Sequelize ]</td>
+    <td>TBA</td>
+    <td>TBA</td>
+  </tr>
 </table>
